@@ -1,4 +1,4 @@
-import { Config, ExtendedInterface, ChangeCase } from 'yapi-to-typescript'
+import { Config, ExtendedInterface, ChangeCase, Interface } from 'yapi-to-typescript'
 
 const config: Config = [
   {
@@ -11,6 +11,7 @@ const config: Config = [
     devEnvName: 'dev',
     outputFilePath: 'src/api/index.ts',
     requestFunctionFilePath: 'src/api/request.ts',
+    dataKey: '',
     projects: [
       {
         token: process.env.YTT_TOKEN as string,

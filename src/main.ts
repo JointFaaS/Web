@@ -2,7 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import { Menu, Icon, Form, Input, Layout, Button, Checkbox, Spin, Row, Col, Divider, Pagination, PageHeader, List } from 'ant-design-vue'
+import { Menu, Icon, Form, Input, Layout, Button, Checkbox, Spin, Row, Col, Divider, Pagination, PageHeader, List, Card } from 'ant-design-vue'
 import 'ant-design-vue/dist/antd.css'
 
 Vue.config.productionTip = false
@@ -21,6 +21,7 @@ Vue.use(Divider)
 Vue.use(Pagination)
 Vue.use(PageHeader)
 Vue.use(List)
+Vue.use(Card)
 
 new Vue({
   router,
