@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Info from '@/views/FunctionInfo.vue'
 import Home from '@/views/Home.vue'
-import Editor from '@/views/Editor.vue'
+import NewFunction from '@/views/NewFunction.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -12,7 +12,7 @@ const routes = [
   },
   {
     path: '/newfunction',
-    component: Editor
+    component: NewFunction
   },
   {
     path: '*',
