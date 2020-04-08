@@ -19,6 +19,7 @@
           <p>env: {{item.runtime}}</p>
           <p>memory: {{item.memorySize}} MB</p>
           <p>timeout: {{item.timeout}} s</p>
+          <a-button @click="(event) => {deleteFunction(item.functionName)}" type="danger">Delete</a-button>
         </a-card>
         </a-list-item>
       </a-list>
@@ -38,9 +39,6 @@ export default class Home extends Vue {
   // data
   page = 1
   pageSize = 8
-  // props
-  // method
-  // mounted
 
   get functionList () {
     const start = (this.page - 1) * this.pageSize
@@ -64,6 +62,10 @@ export default class Home extends Vue {
 
   newFunction () {
     this.$router.push({ path: 'newfunction' })
+  }
+
+  deleteFunction (id: string) {
+    this.$store.dispatch('deleteFunction', id)
   }
 
   mounted () {

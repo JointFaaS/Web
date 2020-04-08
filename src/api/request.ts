@@ -66,6 +66,7 @@ export default function request<TResponseData> (
         })
       } else {
         response.text().then(body => {
+          // eslint-disable-next-line
           resolve(body as any)
         }).catch(res => {
           reject(res)
