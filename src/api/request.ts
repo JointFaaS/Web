@@ -1,4 +1,4 @@
-import { RequestFunctionParams, Method } from 'yapi-to-typescript'
+import { RequestFunctionParams, RequestBodyType } from 'yapi-to-typescript'
 
 export interface RequestOptions {
   /**
@@ -28,28 +28,43 @@ export default function request<TResponseData> (
         : payload.prodUrl
 
     // 请求地址
-    const url = `${baseUrl}${payload.path}`
-    // 具体请求逻辑
-    if (payload.method === Method.GET) {
-      fetch(url, { method: payload.method }).then((response) => {
-        response.json().then(body => {
-          resolve(body)
-        }).catch(res => {
-          reject(res)
-        })
-      }).catch(res => {
-        reject(res)
-      })
-    } else {
-      fetch(url, { method: payload.method, body: JSON.stringify(payload.data) }).then((response) => {
-        response.json().then(body => {
-          resolve(body)
-        }).catch(res => {
-          reject(res)
-        })
-      }).catch(res => {
-        reject(res)
+    let url = `${baseUrl}${payload.path}`
+
+    if (payload.paramNames.length > 0) {
+      // 路径参数
+      const pathParas: string[] = []
+      url = url.replace(new RegExp('\\{(\\w*)\\}'), (s, paraName) => { pathParas.push(paraName); return payload.data[paraName] })
+
+      // url paras
+      const urlParas = payload.paramNames.filter((value) => pathParas.includes(value))
+      url = url + '?'
+      urlParas.forEach((value) => {
+        url = url + value + '=' + payload.data[value] + '&'
       })
     }
+    const bodyParas: string[] = Object.keys(payload.data).filter((value: string) => !payload.paramNames.includes(value))
+    let req
+    // 具体请求逻辑
+    if (payload.requestBodyType === RequestBodyType.form) {
+      const formdata = new FormData()
+      bodyParas.forEach(value => {
+        formdata.append(value, payload.data[value])
+      })
+      req = fetch(url, { method: payload.method, headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: formdata })
+    } else if (payload.requestBodyType === RequestBodyType.json) {
+      req = fetch(url, { method: payload.method, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload.data, bodyParas) })
+    } else {
+      req = fetch(url, { method: payload.method })
+    }
+
+    req.then((response) => {
+      response.json().then(body => {
+        resolve(body)
+      }).catch(res => {
+        reject(res)
+      })
+    }).catch(res => {
+      reject(res)
+    })
   })
 }

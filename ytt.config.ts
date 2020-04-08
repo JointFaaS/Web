@@ -16,7 +16,25 @@ const config: Config = [
       {
         token: process.env.YTT_TOKEN as string,
         getRequestFunctionName: (interfaceInfo: ExtendedInterface, changeCase: ChangeCase): string => {
-          return interfaceInfo.title
+          return interfaceInfo.path.replace(new RegExp("[\\+\\/\\{\\}]","g"), '') + interfaceInfo.method
+        },
+        preproccessInterface: interfaceInfo => {
+          interfaceInfo.res_body = interfaceInfo.res_body.replace(new RegExp('"(String|int|long|Interger)"', 'g'), (s, s1) => {
+            if (s1 === 'String') {
+              return '"string"'
+            }else if (s1 === 'int' || s1 === 'long' || s1 === 'Interger') {
+              return '"integer"'
+            }
+          })
+          if (interfaceInfo.req_body_other !== undefined)
+            interfaceInfo.req_body_other = interfaceInfo.req_body_other.replace(new RegExp('"(String|int|long|Interger)"', 'g'), (s, s1) => {
+              if (s1 === 'String') {
+                return '"string"'
+              }else if (s1 === 'int' || s1 === 'long' || s1 === 'Interger') {
+                return '"integer"'
+              }
+            })
+          return interfaceInfo
         },
         categories: [
           {

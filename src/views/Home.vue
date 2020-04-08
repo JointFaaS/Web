@@ -6,17 +6,17 @@
       title="Function Panel"
       >
         <div slot="extra">
-          <a-button @click="refresh" key="3">Refresh</a-button>
-          <a-button @click="newFunction" key="3">New Function</a-button>
+          <a-button @click="refresh">Refresh</a-button>
+          <a-button @click="newFunction">New Function</a-button>
         </div>
       </a-page-header>
     </a-row>
     <a-row>
       <a-list :grid="{ gutter: 16, column: 4 }" :dataSource="functionList">
         <a-list-item slot="renderItem" slot-scope="item">
-        <a-card :title="item.funcName">
-          <router-link :to="'/function/' + item.funcName" slot="extra">Details</router-link>
-          <p>env: {{item.env}}</p>
+        <a-card :title="item.functionName">
+          <router-link :to="'/function/' + item.functionName" slot="extra">Details</router-link>
+          <p>env: {{item.runtime}}</p>
           <p>memory: {{item.memorySize}} MB</p>
           <p>timeout: {{item.timeout}} s</p>
         </a-card>
@@ -35,8 +35,12 @@ import Component from 'vue-class-component'
 
 @Component
 export default class Home extends Vue {
+  // data
   page = 1
   pageSize = 8
+  // props
+  // method
+  // mounted
 
   get functionList () {
     const start = (this.page - 1) * this.pageSize
@@ -71,7 +75,7 @@ export default class Home extends Vue {
   }
 
   beforeDestroy () {
-    this.$store.commit('storepage', { page: this.page, pageSize: this.pageSize })
+    this.$store.commit('storePage', { page: this.page, pageSize: this.pageSize })
   }
 }
 

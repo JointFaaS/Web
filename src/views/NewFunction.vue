@@ -18,9 +18,6 @@
               </a-select-option>
             </a-select>
           </a-form-model-item>
-          <!-- <a-form-model-item label="Instant delivery">
-            <a-switch v-model="form.enableNative" />
-          </a-form-model-item> -->
           <a-form-model-item label="Timeout (1~300s)" prop="timeout">
             <a-input-number v-model="form.timeout" :min="1" :max="300" />
           </a-form-model-item>
@@ -46,7 +43,8 @@
 import Vue from 'vue'
 import Component from 'vue-class-component'
 import AceEditor from '@/components/AceEditor.vue'
-import { FunctionCreate } from '@/api'
+import { functionPOST } from '@/api'
+import JSZip from 'jszip'
 
 @Component({
   components: {
@@ -84,18 +82,21 @@ export default class NewFunction extends Vue {
 
   onSubmit () {
     // form-modal types misses
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (this.$refs.funcform as any).validate(async (valid: boolean) => {
       if (valid) {
         this.spinning = true
         try {
-          const res = await FunctionCreate({
+          const zip = new JSZip()
+          zip.file('jointfaas.py', this.mainCode)
+          const res = await functionPOST({
             funcName: this.form.name,
-            memorySize: this.form.memorySize,
-            timeout: this.form.timeout,
+            memorySize: this.form.memorySize.toString(),
+            timeout: this.form.timeout.toString(),
             env: this.form.env,
-            codeZip: ''
+            codeZip: await zip.generateAsync({ type: 'base64' })
           })
-          this.$message.info(String(res.status))
+          this.$message.info(String(res))
         } catch (error) {
           console.log()
         } finally {

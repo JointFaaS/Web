@@ -54,109 +54,43 @@ const prodUrl_0_0_0_1 = 'http://202.120.40.8:30416' as any
 const dataKey_0_0_0_1 = '' as any
 
 /**
- * 接口 [FunctionCodeGet↗](http://202.120.40.8:1086/project/13/interface/api/18) 的 **请求类型**
+ * 接口 [\/function↗](http://202.120.40.8:1086/project/13/interface/api/11) 的 **请求类型**
  *
- * @分类 [函数管理↗](http://202.120.40.8:1086/project/13/interface/api/cat_6)
- * @请求头 `GET /sourcezip`
- * @更新时间 `2020-03-31 15:31:27`
+ * @分类 [function-controller↗](http://202.120.40.8:1086/project/13/interface/api/cat_16)
+ * @请求头 `POST /function`
+ * @更新时间 `2020-04-08 15:47:38`
  */
-export interface FunctionCodeGetRequest {}
-
 /**
- * 接口 [FunctionCodeGet↗](http://202.120.40.8:1086/project/13/interface/api/18) 的 **返回类型**
- *
- * @分类 [函数管理↗](http://202.120.40.8:1086/project/13/interface/api/cat_6)
- * @请求头 `GET /sourcezip`
- * @更新时间 `2020-03-31 15:31:27`
+ * FunctionCreationRequest :FunctionCreationRequest
  */
-export interface FunctionCodeGetResponse {}
-
-/**
- * 接口 [FunctionCodeGet↗](http://202.120.40.8:1086/project/13/interface/api/18) 的 **请求配置的类型**
- *
- * @分类 [函数管理↗](http://202.120.40.8:1086/project/13/interface/api/cat_6)
- * @请求头 `GET /sourcezip`
- * @更新时间 `2020-03-31 15:31:27`
- */
-type FunctionCodeGetRequestConfig = Readonly<
-  RequestConfig<
-    'http://202.120.40.8:1086/mock/13',
-    'http://localhost:3000',
-    'http://202.120.40.8:30416',
-    '/sourcezip',
-    '',
-    string,
-    true
-  >
->
-
-/**
- * 接口 [FunctionCodeGet↗](http://202.120.40.8:1086/project/13/interface/api/18) 的 **请求配置**
- *
- * @分类 [函数管理↗](http://202.120.40.8:1086/project/13/interface/api/cat_6)
- * @请求头 `GET /sourcezip`
- * @更新时间 `2020-03-31 15:31:27`
- */
-const functionCodeGetRequestConfig: FunctionCodeGetRequestConfig = {
-  mockUrl: mockUrl_0_0_0_1,
-  devUrl: devUrl_0_0_0_1,
-  prodUrl: prodUrl_0_0_0_1,
-  path: '/sourcezip',
-  method: Method.GET,
-  requestBodyType: RequestBodyType.query,
-  responseBodyType: ResponseBodyType.json,
-  dataKey: dataKey_0_0_0_1,
-  paramNames: [],
-  requestDataOptional: true,
+export interface FunctionPostRequest {
+  funcName?: string
+  memorySize?: string
+  codeZip?: string
+  env?: string
+  timeout?: string
 }
 
 /**
- * 接口 [FunctionCodeGet↗](http://202.120.40.8:1086/project/13/interface/api/18) 的 **请求函数**
+ * 接口 [\/function↗](http://202.120.40.8:1086/project/13/interface/api/11) 的 **返回类型**
  *
- * @分类 [函数管理↗](http://202.120.40.8:1086/project/13/interface/api/cat_6)
- * @请求头 `GET /sourcezip`
- * @更新时间 `2020-03-31 15:31:27`
+ * @分类 [function-controller↗](http://202.120.40.8:1086/project/13/interface/api/cat_16)
+ * @请求头 `POST /function`
+ * @更新时间 `2020-04-08 15:47:38`
  */
-export const FunctionCodeGet = makeRequest<
-  FunctionCodeGetRequest,
-  FunctionCodeGetResponse,
-  FunctionCodeGetRequestConfig
->(functionCodeGetRequestConfig)
+/**
+ * FunctionCreationResponse :FunctionCreationResponse
+ */
+export interface FunctionPostResponse {}
 
 /**
- * 接口 [FunctionCreate↗](http://202.120.40.8:1086/project/13/interface/api/11) 的 **请求类型**
+ * 接口 [\/function↗](http://202.120.40.8:1086/project/13/interface/api/11) 的 **请求配置的类型**
  *
- * @分类 [函数管理↗](http://202.120.40.8:1086/project/13/interface/api/cat_6)
+ * @分类 [function-controller↗](http://202.120.40.8:1086/project/13/interface/api/cat_16)
  * @请求头 `POST /function`
- * @更新时间 `2020-04-01 13:51:34`
+ * @更新时间 `2020-04-08 15:47:38`
  */
-export interface FunctionCreateRequest {
-  funcName: string
-  codeZip: string
-  memorySize: number
-  timeout: number
-  env: string
-}
-
-/**
- * 接口 [FunctionCreate↗](http://202.120.40.8:1086/project/13/interface/api/11) 的 **返回类型**
- *
- * @分类 [函数管理↗](http://202.120.40.8:1086/project/13/interface/api/cat_6)
- * @请求头 `POST /function`
- * @更新时间 `2020-04-01 13:51:34`
- */
-export interface FunctionCreateResponse {
-  status: number
-}
-
-/**
- * 接口 [FunctionCreate↗](http://202.120.40.8:1086/project/13/interface/api/11) 的 **请求配置的类型**
- *
- * @分类 [函数管理↗](http://202.120.40.8:1086/project/13/interface/api/cat_6)
- * @请求头 `POST /function`
- * @更新时间 `2020-04-01 13:51:34`
- */
-type FunctionCreateRequestConfig = Readonly<
+type FunctionPostRequestConfig = Readonly<
   RequestConfig<
     'http://202.120.40.8:1086/mock/13',
     'http://localhost:3000',
@@ -169,13 +103,13 @@ type FunctionCreateRequestConfig = Readonly<
 >
 
 /**
- * 接口 [FunctionCreate↗](http://202.120.40.8:1086/project/13/interface/api/11) 的 **请求配置**
+ * 接口 [\/function↗](http://202.120.40.8:1086/project/13/interface/api/11) 的 **请求配置**
  *
- * @分类 [函数管理↗](http://202.120.40.8:1086/project/13/interface/api/cat_6)
+ * @分类 [function-controller↗](http://202.120.40.8:1086/project/13/interface/api/cat_16)
  * @请求头 `POST /function`
- * @更新时间 `2020-04-01 13:51:34`
+ * @更新时间 `2020-04-08 15:47:38`
  */
-const functionCreateRequestConfig: FunctionCreateRequestConfig = {
+const functionPostRequestConfig: FunctionPostRequestConfig = {
   mockUrl: mockUrl_0_0_0_1,
   devUrl: devUrl_0_0_0_1,
   prodUrl: prodUrl_0_0_0_1,
@@ -189,53 +123,74 @@ const functionCreateRequestConfig: FunctionCreateRequestConfig = {
 }
 
 /**
- * 接口 [FunctionCreate↗](http://202.120.40.8:1086/project/13/interface/api/11) 的 **请求函数**
+ * 接口 [\/function↗](http://202.120.40.8:1086/project/13/interface/api/11) 的 **请求函数**
  *
- * @分类 [函数管理↗](http://202.120.40.8:1086/project/13/interface/api/cat_6)
+ * @分类 [function-controller↗](http://202.120.40.8:1086/project/13/interface/api/cat_16)
  * @请求头 `POST /function`
- * @更新时间 `2020-04-01 13:51:34`
+ * @更新时间 `2020-04-08 15:47:38`
  */
-export const FunctionCreate = makeRequest<FunctionCreateRequest, FunctionCreateResponse, FunctionCreateRequestConfig>(
-  functionCreateRequestConfig,
+export const functionPOST = makeRequest<FunctionPostRequest, FunctionPostResponse, FunctionPostRequestConfig>(
+  functionPostRequestConfig,
 )
 
 /**
- * 接口 [FunctionGet↗](http://202.120.40.8:1086/project/13/interface/api/25) 的 **请求类型**
+ * 接口 [\/function↗](http://202.120.40.8:1086/project/13/interface/api/25) 的 **请求类型**
  *
- * @分类 [函数管理↗](http://202.120.40.8:1086/project/13/interface/api/cat_6)
+ * @分类 [function-controller↗](http://202.120.40.8:1086/project/13/interface/api/cat_16)
  * @请求头 `GET /function`
- * @更新时间 `2020-04-01 13:49:32`
+ * @更新时间 `2020-04-08 15:47:38`
  */
-export interface FunctionGetRequest {
-  /**
-   * 为空则返回所有func
-   */
-  funcName?: string
-}
+export interface FunctionGetRequest {}
 
 /**
- * 接口 [FunctionGet↗](http://202.120.40.8:1086/project/13/interface/api/25) 的 **返回类型**
+ * 接口 [\/function↗](http://202.120.40.8:1086/project/13/interface/api/25) 的 **返回类型**
  *
- * @分类 [函数管理↗](http://202.120.40.8:1086/project/13/interface/api/cat_6)
+ * @分类 [function-controller↗](http://202.120.40.8:1086/project/13/interface/api/cat_16)
  * @请求头 `GET /function`
- * @更新时间 `2020-04-01 13:49:32`
+ * @更新时间 `2020-04-08 15:47:38`
+ */
+/**
+ * FunctionResponse :FunctionResponse
  */
 export interface FunctionGetResponse {
-  status: number
-  functions: {
-    funcName: string
-    env: string
-    memorySize: string
-    timeout: string
+  /**
+   * Function
+   */
+  functions?: {
+    functionName?: string
+    description?: string
+    runtime?: string
+    handler?: string
+    timeout?: number
+    memorySize?: number
+    codeSize?: number
+    codeChecksum?: string
+    /**
+     * (该参数为map)
+     */
+    environmentVariables?: {
+      /**
+       * string
+       */
+      mapKey?: {}
+      /**
+       * string
+       */
+      mapValue?: {
+        hash?: number
+      }
+    }
+    createdTime?: string
   }[]
+  status?: number
 }
 
 /**
- * 接口 [FunctionGet↗](http://202.120.40.8:1086/project/13/interface/api/25) 的 **请求配置的类型**
+ * 接口 [\/function↗](http://202.120.40.8:1086/project/13/interface/api/25) 的 **请求配置的类型**
  *
- * @分类 [函数管理↗](http://202.120.40.8:1086/project/13/interface/api/cat_6)
+ * @分类 [function-controller↗](http://202.120.40.8:1086/project/13/interface/api/cat_16)
  * @请求头 `GET /function`
- * @更新时间 `2020-04-01 13:49:32`
+ * @更新时间 `2020-04-08 15:47:38`
  */
 type FunctionGetRequestConfig = Readonly<
   RequestConfig<
@@ -245,16 +200,16 @@ type FunctionGetRequestConfig = Readonly<
     '/function',
     '',
     string,
-    false
+    true
   >
 >
 
 /**
- * 接口 [FunctionGet↗](http://202.120.40.8:1086/project/13/interface/api/25) 的 **请求配置**
+ * 接口 [\/function↗](http://202.120.40.8:1086/project/13/interface/api/25) 的 **请求配置**
  *
- * @分类 [函数管理↗](http://202.120.40.8:1086/project/13/interface/api/cat_6)
+ * @分类 [function-controller↗](http://202.120.40.8:1086/project/13/interface/api/cat_16)
  * @请求头 `GET /function`
- * @更新时间 `2020-04-01 13:49:32`
+ * @更新时间 `2020-04-08 15:47:38`
  */
 const functionGetRequestConfig: FunctionGetRequestConfig = {
   mockUrl: mockUrl_0_0_0_1,
@@ -266,46 +221,240 @@ const functionGetRequestConfig: FunctionGetRequestConfig = {
   responseBodyType: ResponseBodyType.json,
   dataKey: dataKey_0_0_0_1,
   paramNames: [],
-  requestDataOptional: false,
+  requestDataOptional: true,
 }
 
 /**
- * 接口 [FunctionGet↗](http://202.120.40.8:1086/project/13/interface/api/25) 的 **请求函数**
+ * 接口 [\/function↗](http://202.120.40.8:1086/project/13/interface/api/25) 的 **请求函数**
  *
- * @分类 [函数管理↗](http://202.120.40.8:1086/project/13/interface/api/cat_6)
+ * @分类 [function-controller↗](http://202.120.40.8:1086/project/13/interface/api/cat_16)
  * @请求头 `GET /function`
- * @更新时间 `2020-04-01 13:49:32`
+ * @更新时间 `2020-04-08 15:47:38`
  */
-export const FunctionGet = makeRequest<FunctionGetRequest, FunctionGetResponse, FunctionGetRequestConfig>(
+export const functionGET = makeRequest<FunctionGetRequest, FunctionGetResponse, FunctionGetRequestConfig>(
   functionGetRequestConfig,
 )
 
 /**
- * 接口 [FunctionInvoke↗](http://202.120.40.8:1086/project/13/interface/api/32) 的 **请求类型**
+ * 接口 [\/function\/{id}↗](http://202.120.40.8:1086/project/13/interface/api/256) 的 **请求类型**
  *
- * @分类 [函数管理↗](http://202.120.40.8:1086/project/13/interface/api/cat_6)
- * @请求头 `POST /invoke`
- * @更新时间 `2020-03-31 15:31:45`
+ * @分类 [function-controller↗](http://202.120.40.8:1086/project/13/interface/api/cat_16)
+ * @请求头 `DELETE /function/{id}`
+ * @更新时间 `2020-04-08 15:47:38`
  */
-export interface FunctionInvokeRequest {}
+export interface FunctionidDeleteRequest {
+  /**
+   * (String)
+   */
+  id: string
+}
 
 /**
- * 接口 [FunctionInvoke↗](http://202.120.40.8:1086/project/13/interface/api/32) 的 **返回类型**
+ * 接口 [\/function\/{id}↗](http://202.120.40.8:1086/project/13/interface/api/256) 的 **返回类型**
  *
- * @分类 [函数管理↗](http://202.120.40.8:1086/project/13/interface/api/cat_6)
- * @请求头 `POST /invoke`
- * @更新时间 `2020-03-31 15:31:45`
+ * @分类 [function-controller↗](http://202.120.40.8:1086/project/13/interface/api/cat_16)
+ * @请求头 `DELETE /function/{id}`
+ * @更新时间 `2020-04-08 15:47:38`
  */
-export interface FunctionInvokeResponse {}
+export interface FunctionidDeleteResponse {}
 
 /**
- * 接口 [FunctionInvoke↗](http://202.120.40.8:1086/project/13/interface/api/32) 的 **请求配置的类型**
+ * 接口 [\/function\/{id}↗](http://202.120.40.8:1086/project/13/interface/api/256) 的 **请求配置的类型**
  *
- * @分类 [函数管理↗](http://202.120.40.8:1086/project/13/interface/api/cat_6)
- * @请求头 `POST /invoke`
- * @更新时间 `2020-03-31 15:31:45`
+ * @分类 [function-controller↗](http://202.120.40.8:1086/project/13/interface/api/cat_16)
+ * @请求头 `DELETE /function/{id}`
+ * @更新时间 `2020-04-08 15:47:38`
  */
-type FunctionInvokeRequestConfig = Readonly<
+type FunctionidDeleteRequestConfig = Readonly<
+  RequestConfig<
+    'http://202.120.40.8:1086/mock/13',
+    'http://localhost:3000',
+    'http://202.120.40.8:30416',
+    '/function/{id}',
+    '',
+    'id',
+    false
+  >
+>
+
+/**
+ * 接口 [\/function\/{id}↗](http://202.120.40.8:1086/project/13/interface/api/256) 的 **请求配置**
+ *
+ * @分类 [function-controller↗](http://202.120.40.8:1086/project/13/interface/api/cat_16)
+ * @请求头 `DELETE /function/{id}`
+ * @更新时间 `2020-04-08 15:47:38`
+ */
+const functionidDeleteRequestConfig: FunctionidDeleteRequestConfig = {
+  mockUrl: mockUrl_0_0_0_1,
+  devUrl: devUrl_0_0_0_1,
+  prodUrl: prodUrl_0_0_0_1,
+  path: '/function/{id}',
+  method: Method.DELETE,
+  requestBodyType: RequestBodyType.json,
+  responseBodyType: ResponseBodyType.json,
+  dataKey: dataKey_0_0_0_1,
+  paramNames: ['id'],
+  requestDataOptional: false,
+}
+
+/**
+ * 接口 [\/function\/{id}↗](http://202.120.40.8:1086/project/13/interface/api/256) 的 **请求函数**
+ *
+ * @分类 [function-controller↗](http://202.120.40.8:1086/project/13/interface/api/cat_16)
+ * @请求头 `DELETE /function/{id}`
+ * @更新时间 `2020-04-08 15:47:38`
+ */
+export const functionidDELETE = makeRequest<
+  FunctionidDeleteRequest,
+  FunctionidDeleteResponse,
+  FunctionidDeleteRequestConfig
+>(functionidDeleteRequestConfig)
+
+/**
+ * 接口 [\/function\/{id}↗](http://202.120.40.8:1086/project/13/interface/api/263) 的 **请求类型**
+ *
+ * @分类 [function-controller↗](http://202.120.40.8:1086/project/13/interface/api/cat_16)
+ * @请求头 `GET /function/{id}`
+ * @更新时间 `2020-04-08 15:47:38`
+ */
+export interface FunctionidGetRequest {
+  /**
+   * (String)
+   */
+  id: string
+}
+
+/**
+ * 接口 [\/function\/{id}↗](http://202.120.40.8:1086/project/13/interface/api/263) 的 **返回类型**
+ *
+ * @分类 [function-controller↗](http://202.120.40.8:1086/project/13/interface/api/cat_16)
+ * @请求头 `GET /function/{id}`
+ * @更新时间 `2020-04-08 15:47:38`
+ */
+/**
+ * FunctionResponse :FunctionResponse
+ */
+export interface FunctionidGetResponse {
+  /**
+   * Function
+   */
+  functions?: {
+    functionName?: string
+    description?: string
+    runtime?: string
+    handler?: string
+    timeout?: number
+    memorySize?: number
+    codeSize?: number
+    codeChecksum?: string
+    /**
+     * (该参数为map)
+     */
+    environmentVariables?: {
+      /**
+       * string
+       */
+      mapKey?: {}
+      /**
+       * string
+       */
+      mapValue?: {
+        hash?: number
+      }
+    }
+    createdTime?: string
+  }[]
+  status?: number
+}
+
+/**
+ * 接口 [\/function\/{id}↗](http://202.120.40.8:1086/project/13/interface/api/263) 的 **请求配置的类型**
+ *
+ * @分类 [function-controller↗](http://202.120.40.8:1086/project/13/interface/api/cat_16)
+ * @请求头 `GET /function/{id}`
+ * @更新时间 `2020-04-08 15:47:38`
+ */
+type FunctionidGetRequestConfig = Readonly<
+  RequestConfig<
+    'http://202.120.40.8:1086/mock/13',
+    'http://localhost:3000',
+    'http://202.120.40.8:30416',
+    '/function/{id}',
+    '',
+    'id',
+    false
+  >
+>
+
+/**
+ * 接口 [\/function\/{id}↗](http://202.120.40.8:1086/project/13/interface/api/263) 的 **请求配置**
+ *
+ * @分类 [function-controller↗](http://202.120.40.8:1086/project/13/interface/api/cat_16)
+ * @请求头 `GET /function/{id}`
+ * @更新时间 `2020-04-08 15:47:38`
+ */
+const functionidGetRequestConfig: FunctionidGetRequestConfig = {
+  mockUrl: mockUrl_0_0_0_1,
+  devUrl: devUrl_0_0_0_1,
+  prodUrl: prodUrl_0_0_0_1,
+  path: '/function/{id}',
+  method: Method.GET,
+  requestBodyType: RequestBodyType.query,
+  responseBodyType: ResponseBodyType.json,
+  dataKey: dataKey_0_0_0_1,
+  paramNames: ['id'],
+  requestDataOptional: false,
+}
+
+/**
+ * 接口 [\/function\/{id}↗](http://202.120.40.8:1086/project/13/interface/api/263) 的 **请求函数**
+ *
+ * @分类 [function-controller↗](http://202.120.40.8:1086/project/13/interface/api/cat_16)
+ * @请求头 `GET /function/{id}`
+ * @更新时间 `2020-04-08 15:47:38`
+ */
+export const functionidGET = makeRequest<FunctionidGetRequest, FunctionidGetResponse, FunctionidGetRequestConfig>(
+  functionidGetRequestConfig,
+)
+
+/**
+ * 接口 [\/invoke↗](http://202.120.40.8:1086/project/13/interface/api/32) 的 **请求类型**
+ *
+ * @分类 [function-controller↗](http://202.120.40.8:1086/project/13/interface/api/cat_16)
+ * @请求头 `POST /invoke`
+ * @更新时间 `2020-04-07 13:39:25`
+ */
+/**
+ * FunctionInvocationRequest :FunctionInvocationRequest
+ */
+export interface InvokePostRequest {
+  funcName?: string
+  args?: string
+}
+
+/**
+ * 接口 [\/invoke↗](http://202.120.40.8:1086/project/13/interface/api/32) 的 **返回类型**
+ *
+ * @分类 [function-controller↗](http://202.120.40.8:1086/project/13/interface/api/cat_16)
+ * @请求头 `POST /invoke`
+ * @更新时间 `2020-04-07 13:39:25`
+ */
+/**
+ * jointfaas.broker.controller.pojo.FunctionInvocationRequest
+ */
+export interface InvokePostResponse {
+  funcName?: string
+  args?: string
+}
+
+/**
+ * 接口 [\/invoke↗](http://202.120.40.8:1086/project/13/interface/api/32) 的 **请求配置的类型**
+ *
+ * @分类 [function-controller↗](http://202.120.40.8:1086/project/13/interface/api/cat_16)
+ * @请求头 `POST /invoke`
+ * @更新时间 `2020-04-07 13:39:25`
+ */
+type InvokePostRequestConfig = Readonly<
   RequestConfig<
     'http://202.120.40.8:1086/mock/13',
     'http://localhost:3000',
@@ -313,39 +462,39 @@ type FunctionInvokeRequestConfig = Readonly<
     '/invoke',
     '',
     string,
-    true
+    false
   >
 >
 
 /**
- * 接口 [FunctionInvoke↗](http://202.120.40.8:1086/project/13/interface/api/32) 的 **请求配置**
+ * 接口 [\/invoke↗](http://202.120.40.8:1086/project/13/interface/api/32) 的 **请求配置**
  *
- * @分类 [函数管理↗](http://202.120.40.8:1086/project/13/interface/api/cat_6)
+ * @分类 [function-controller↗](http://202.120.40.8:1086/project/13/interface/api/cat_16)
  * @请求头 `POST /invoke`
- * @更新时间 `2020-03-31 15:31:45`
+ * @更新时间 `2020-04-07 13:39:25`
  */
-const functionInvokeRequestConfig: FunctionInvokeRequestConfig = {
+const invokePostRequestConfig: InvokePostRequestConfig = {
   mockUrl: mockUrl_0_0_0_1,
   devUrl: devUrl_0_0_0_1,
   prodUrl: prodUrl_0_0_0_1,
   path: '/invoke',
   method: Method.POST,
-  requestBodyType: RequestBodyType.form,
+  requestBodyType: RequestBodyType.json,
   responseBodyType: ResponseBodyType.json,
   dataKey: dataKey_0_0_0_1,
   paramNames: [],
-  requestDataOptional: true,
+  requestDataOptional: false,
 }
 
 /**
- * 接口 [FunctionInvoke↗](http://202.120.40.8:1086/project/13/interface/api/32) 的 **请求函数**
+ * 接口 [\/invoke↗](http://202.120.40.8:1086/project/13/interface/api/32) 的 **请求函数**
  *
- * @分类 [函数管理↗](http://202.120.40.8:1086/project/13/interface/api/cat_6)
+ * @分类 [function-controller↗](http://202.120.40.8:1086/project/13/interface/api/cat_16)
  * @请求头 `POST /invoke`
- * @更新时间 `2020-03-31 15:31:45`
+ * @更新时间 `2020-04-07 13:39:25`
  */
-export const FunctionInvoke = makeRequest<FunctionInvokeRequest, FunctionInvokeResponse, FunctionInvokeRequestConfig>(
-  functionInvokeRequestConfig,
+export const invokePOST = makeRequest<InvokePostRequest, InvokePostResponse, InvokePostRequestConfig>(
+  invokePostRequestConfig,
 )
 
 /* prettier-ignore-end */

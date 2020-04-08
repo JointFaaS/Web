@@ -8,7 +8,8 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/function/:id',
-    component: Info
+    component: Info,
+    props: true
   },
   {
     path: '/newfunction',

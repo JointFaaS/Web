@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import { FunctionGet } from '@/api'
+import { functionGET } from '@/api'
 
 Vue.use(Vuex)
 
@@ -25,7 +25,7 @@ export default new Vuex.Store({
   },
   actions: {
     async getFunctions ({ commit }) {
-      const res = await FunctionGet({ funcName: undefined })
+      const res = await functionGET()
       commit('updateFunctions', res.functions)
     }
   },
