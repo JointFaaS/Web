@@ -58,7 +58,7 @@ const dataKey_0_0_0_1 = '' as any
  *
  * @分类 [function-controller↗](http://202.120.40.8:1086/project/13/interface/api/cat_16)
  * @请求头 `POST /function`
- * @更新时间 `2020-04-08 15:47:38`
+ * @更新时间 `2020-04-08 18:20:07`
  */
 /**
  * FunctionCreationRequest :FunctionCreationRequest
@@ -76,7 +76,7 @@ export interface FunctionPostRequest {
  *
  * @分类 [function-controller↗](http://202.120.40.8:1086/project/13/interface/api/cat_16)
  * @请求头 `POST /function`
- * @更新时间 `2020-04-08 15:47:38`
+ * @更新时间 `2020-04-08 18:20:07`
  */
 /**
  * FunctionCreationResponse :FunctionCreationResponse
@@ -88,7 +88,7 @@ export interface FunctionPostResponse {}
  *
  * @分类 [function-controller↗](http://202.120.40.8:1086/project/13/interface/api/cat_16)
  * @请求头 `POST /function`
- * @更新时间 `2020-04-08 15:47:38`
+ * @更新时间 `2020-04-08 18:20:07`
  */
 type FunctionPostRequestConfig = Readonly<
   RequestConfig<
@@ -107,7 +107,7 @@ type FunctionPostRequestConfig = Readonly<
  *
  * @分类 [function-controller↗](http://202.120.40.8:1086/project/13/interface/api/cat_16)
  * @请求头 `POST /function`
- * @更新时间 `2020-04-08 15:47:38`
+ * @更新时间 `2020-04-08 18:20:07`
  */
 const functionPostRequestConfig: FunctionPostRequestConfig = {
   mockUrl: mockUrl_0_0_0_1,
@@ -127,7 +127,7 @@ const functionPostRequestConfig: FunctionPostRequestConfig = {
  *
  * @分类 [function-controller↗](http://202.120.40.8:1086/project/13/interface/api/cat_16)
  * @请求头 `POST /function`
- * @更新时间 `2020-04-08 15:47:38`
+ * @更新时间 `2020-04-08 18:20:07`
  */
 export const functionPOST = makeRequest<FunctionPostRequest, FunctionPostResponse, FunctionPostRequestConfig>(
   functionPostRequestConfig,
@@ -138,7 +138,7 @@ export const functionPOST = makeRequest<FunctionPostRequest, FunctionPostRespons
  *
  * @分类 [function-controller↗](http://202.120.40.8:1086/project/13/interface/api/cat_16)
  * @请求头 `GET /function`
- * @更新时间 `2020-04-08 15:47:38`
+ * @更新时间 `2020-04-08 18:20:07`
  */
 export interface FunctionGetRequest {}
 
@@ -147,7 +147,7 @@ export interface FunctionGetRequest {}
  *
  * @分类 [function-controller↗](http://202.120.40.8:1086/project/13/interface/api/cat_16)
  * @请求头 `GET /function`
- * @更新时间 `2020-04-08 15:47:38`
+ * @更新时间 `2020-04-08 18:20:07`
  */
 /**
  * FunctionResponse :FunctionResponse
@@ -190,7 +190,7 @@ export interface FunctionGetResponse {
  *
  * @分类 [function-controller↗](http://202.120.40.8:1086/project/13/interface/api/cat_16)
  * @请求头 `GET /function`
- * @更新时间 `2020-04-08 15:47:38`
+ * @更新时间 `2020-04-08 18:20:07`
  */
 type FunctionGetRequestConfig = Readonly<
   RequestConfig<
@@ -209,7 +209,7 @@ type FunctionGetRequestConfig = Readonly<
  *
  * @分类 [function-controller↗](http://202.120.40.8:1086/project/13/interface/api/cat_16)
  * @请求头 `GET /function`
- * @更新时间 `2020-04-08 15:47:38`
+ * @更新时间 `2020-04-08 18:20:07`
  */
 const functionGetRequestConfig: FunctionGetRequestConfig = {
   mockUrl: mockUrl_0_0_0_1,
@@ -229,7 +229,7 @@ const functionGetRequestConfig: FunctionGetRequestConfig = {
  *
  * @分类 [function-controller↗](http://202.120.40.8:1086/project/13/interface/api/cat_16)
  * @请求头 `GET /function`
- * @更新时间 `2020-04-08 15:47:38`
+ * @更新时间 `2020-04-08 18:20:07`
  */
 export const functionGET = makeRequest<FunctionGetRequest, FunctionGetResponse, FunctionGetRequestConfig>(
   functionGetRequestConfig,
@@ -240,7 +240,7 @@ export const functionGET = makeRequest<FunctionGetRequest, FunctionGetResponse, 
  *
  * @分类 [function-controller↗](http://202.120.40.8:1086/project/13/interface/api/cat_16)
  * @请求头 `DELETE /function/{id}`
- * @更新时间 `2020-04-08 15:47:38`
+ * @更新时间 `2020-04-08 18:20:07`
  */
 export interface FunctionidDeleteRequest {
   /**
@@ -254,7 +254,7 @@ export interface FunctionidDeleteRequest {
  *
  * @分类 [function-controller↗](http://202.120.40.8:1086/project/13/interface/api/cat_16)
  * @请求头 `DELETE /function/{id}`
- * @更新时间 `2020-04-08 15:47:38`
+ * @更新时间 `2020-04-08 18:20:07`
  */
 export interface FunctionidDeleteResponse {}
 
@@ -263,7 +263,7 @@ export interface FunctionidDeleteResponse {}
  *
  * @分类 [function-controller↗](http://202.120.40.8:1086/project/13/interface/api/cat_16)
  * @请求头 `DELETE /function/{id}`
- * @更新时间 `2020-04-08 15:47:38`
+ * @更新时间 `2020-04-08 18:20:07`
  */
 type FunctionidDeleteRequestConfig = Readonly<
   RequestConfig<
@@ -282,7 +282,7 @@ type FunctionidDeleteRequestConfig = Readonly<
  *
  * @分类 [function-controller↗](http://202.120.40.8:1086/project/13/interface/api/cat_16)
  * @请求头 `DELETE /function/{id}`
- * @更新时间 `2020-04-08 15:47:38`
+ * @更新时间 `2020-04-08 18:20:07`
  */
 const functionidDeleteRequestConfig: FunctionidDeleteRequestConfig = {
   mockUrl: mockUrl_0_0_0_1,
@@ -302,7 +302,7 @@ const functionidDeleteRequestConfig: FunctionidDeleteRequestConfig = {
  *
  * @分类 [function-controller↗](http://202.120.40.8:1086/project/13/interface/api/cat_16)
  * @请求头 `DELETE /function/{id}`
- * @更新时间 `2020-04-08 15:47:38`
+ * @更新时间 `2020-04-08 18:20:07`
  */
 export const functionidDELETE = makeRequest<
   FunctionidDeleteRequest,
@@ -315,7 +315,7 @@ export const functionidDELETE = makeRequest<
  *
  * @分类 [function-controller↗](http://202.120.40.8:1086/project/13/interface/api/cat_16)
  * @请求头 `GET /function/{id}`
- * @更新时间 `2020-04-08 15:47:38`
+ * @更新时间 `2020-04-08 18:20:07`
  */
 export interface FunctionidGetRequest {
   /**
@@ -329,7 +329,7 @@ export interface FunctionidGetRequest {
  *
  * @分类 [function-controller↗](http://202.120.40.8:1086/project/13/interface/api/cat_16)
  * @请求头 `GET /function/{id}`
- * @更新时间 `2020-04-08 15:47:38`
+ * @更新时间 `2020-04-08 18:20:07`
  */
 /**
  * FunctionResponse :FunctionResponse
@@ -372,7 +372,7 @@ export interface FunctionidGetResponse {
  *
  * @分类 [function-controller↗](http://202.120.40.8:1086/project/13/interface/api/cat_16)
  * @请求头 `GET /function/{id}`
- * @更新时间 `2020-04-08 15:47:38`
+ * @更新时间 `2020-04-08 18:20:07`
  */
 type FunctionidGetRequestConfig = Readonly<
   RequestConfig<
@@ -391,7 +391,7 @@ type FunctionidGetRequestConfig = Readonly<
  *
  * @分类 [function-controller↗](http://202.120.40.8:1086/project/13/interface/api/cat_16)
  * @请求头 `GET /function/{id}`
- * @更新时间 `2020-04-08 15:47:38`
+ * @更新时间 `2020-04-08 18:20:07`
  */
 const functionidGetRequestConfig: FunctionidGetRequestConfig = {
   mockUrl: mockUrl_0_0_0_1,
@@ -411,7 +411,7 @@ const functionidGetRequestConfig: FunctionidGetRequestConfig = {
  *
  * @分类 [function-controller↗](http://202.120.40.8:1086/project/13/interface/api/cat_16)
  * @请求头 `GET /function/{id}`
- * @更新时间 `2020-04-08 15:47:38`
+ * @更新时间 `2020-04-08 18:20:07`
  */
 export const functionidGET = makeRequest<FunctionidGetRequest, FunctionidGetResponse, FunctionidGetRequestConfig>(
   functionidGetRequestConfig,
@@ -422,7 +422,7 @@ export const functionidGET = makeRequest<FunctionidGetRequest, FunctionidGetResp
  *
  * @分类 [function-controller↗](http://202.120.40.8:1086/project/13/interface/api/cat_16)
  * @请求头 `POST /invoke`
- * @更新时间 `2020-04-07 13:39:25`
+ * @更新时间 `2020-04-08 18:20:07`
  */
 /**
  * FunctionInvocationRequest :FunctionInvocationRequest
@@ -430,6 +430,7 @@ export const functionidGET = makeRequest<FunctionidGetRequest, FunctionidGetResp
 export interface InvokePostRequest {
   funcName?: string
   args?: string
+  enableNative?: string
 }
 
 /**
@@ -437,22 +438,16 @@ export interface InvokePostRequest {
  *
  * @分类 [function-controller↗](http://202.120.40.8:1086/project/13/interface/api/cat_16)
  * @请求头 `POST /invoke`
- * @更新时间 `2020-04-07 13:39:25`
+ * @更新时间 `2020-04-08 18:20:07`
  */
-/**
- * jointfaas.broker.controller.pojo.FunctionInvocationRequest
- */
-export interface InvokePostResponse {
-  funcName?: string
-  args?: string
-}
+export interface InvokePostResponse {}
 
 /**
  * 接口 [\/invoke↗](http://202.120.40.8:1086/project/13/interface/api/32) 的 **请求配置的类型**
  *
  * @分类 [function-controller↗](http://202.120.40.8:1086/project/13/interface/api/cat_16)
  * @请求头 `POST /invoke`
- * @更新时间 `2020-04-07 13:39:25`
+ * @更新时间 `2020-04-08 18:20:07`
  */
 type InvokePostRequestConfig = Readonly<
   RequestConfig<
@@ -471,7 +466,7 @@ type InvokePostRequestConfig = Readonly<
  *
  * @分类 [function-controller↗](http://202.120.40.8:1086/project/13/interface/api/cat_16)
  * @请求头 `POST /invoke`
- * @更新时间 `2020-04-07 13:39:25`
+ * @更新时间 `2020-04-08 18:20:07`
  */
 const invokePostRequestConfig: InvokePostRequestConfig = {
   mockUrl: mockUrl_0_0_0_1,
@@ -480,7 +475,7 @@ const invokePostRequestConfig: InvokePostRequestConfig = {
   path: '/invoke',
   method: Method.POST,
   requestBodyType: RequestBodyType.json,
-  responseBodyType: ResponseBodyType.json,
+  responseBodyType: ResponseBodyType.raw,
   dataKey: dataKey_0_0_0_1,
   paramNames: [],
   requestDataOptional: false,
@@ -491,7 +486,7 @@ const invokePostRequestConfig: InvokePostRequestConfig = {
  *
  * @分类 [function-controller↗](http://202.120.40.8:1086/project/13/interface/api/cat_16)
  * @请求头 `POST /invoke`
- * @更新时间 `2020-04-07 13:39:25`
+ * @更新时间 `2020-04-08 18:20:07`
  */
 export const invokePOST = makeRequest<InvokePostRequest, InvokePostResponse, InvokePostRequestConfig>(
   invokePostRequestConfig,

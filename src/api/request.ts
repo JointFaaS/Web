@@ -1,4 +1,4 @@
-import { RequestFunctionParams, RequestBodyType } from 'yapi-to-typescript'
+import { RequestFunctionParams, RequestBodyType, ResponseBodyType } from 'yapi-to-typescript'
 
 export interface RequestOptions {
   /**
@@ -16,7 +16,7 @@ export interface RequestOptions {
 export default function request<TResponseData> (
   payload: RequestFunctionParams,
   options: RequestOptions = {
-    server: 'mock'
+    server: 'dev'
   }
 ): Promise<TResponseData> {
   return new Promise<TResponseData>((resolve, reject) => {
@@ -58,11 +58,19 @@ export default function request<TResponseData> (
     }
 
     req.then((response) => {
-      response.json().then(body => {
-        resolve(body)
-      }).catch(res => {
-        reject(res)
-      })
+      if (payload.responseBodyType === ResponseBodyType.json) {
+        response.json().then(body => {
+          resolve(body)
+        }).catch(res => {
+          reject(res)
+        })
+      } else {
+        response.text().then(body => {
+          resolve(body as any)
+        }).catch(res => {
+          reject(res)
+        })
+      }
     }).catch(res => {
       reject(res)
     })

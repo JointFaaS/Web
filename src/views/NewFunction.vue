@@ -33,7 +33,10 @@
       </a-col>
       <a-col :span='12'>
         <div>Entrypoint</div>
-        <AceEditor theme='github' lang='python' :minLines='20' :maxLines='40' @valueChange='mainCodeChange' />
+        <AceEditor v-if="form.env === 'python3'" theme='github' lang='python' :minLines='20' :maxLines='40' @valueChange='mainCodeChange' />
+        <a-upload v-if="form.env === 'java8'" :fileList="fileList" :remove="handleRemove" :beforeUpload="beforeUpload">
+          <a-button> <a-icon type="upload" /> 选择jar包 </a-button>
+        </a-upload>
       </a-col>
     </a-row>
   </a-spin>
@@ -45,6 +48,7 @@ import Component from 'vue-class-component'
 import AceEditor from '@/components/AceEditor.vue'
 import { functionPOST } from '@/api'
 import JSZip from 'jszip'
+import { message } from 'ant-design-vue'
 
 @Component({
   components: {
@@ -56,6 +60,7 @@ export default class NewFunction extends Vue {
   spinning = false
   labelCol = { span: 8 }
   wrapperCol = { span: 14 }
+  fileList: File[] = []
   form = {
     name: '',
     env: '',
@@ -80,6 +85,22 @@ export default class NewFunction extends Vue {
     this.$router.push('/')
   }
 
+  handleRemove (file: File) {
+    const index = this.fileList.indexOf(file)
+    const newFileList = this.fileList.slice()
+    newFileList.splice(index, 1)
+    this.fileList = newFileList
+  }
+
+  beforeUpload (file: File) {
+    if (this.fileList.length === 0) {
+      this.fileList = [file]
+    } else {
+      message.info('只能上传一个文件')
+    }
+    return false
+  }
+
   onSubmit () {
     // form-modal types misses
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -88,7 +109,7 @@ export default class NewFunction extends Vue {
         this.spinning = true
         try {
           const zip = new JSZip()
-          zip.file('jointfaas.py', this.mainCode)
+          zip.file('index.py', this.mainCode)
           const res = await functionPOST({
             funcName: this.form.name,
             memorySize: this.form.memorySize.toString(),

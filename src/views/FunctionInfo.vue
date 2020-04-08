@@ -85,7 +85,8 @@ export default class FunctionInfo extends FunctionInfoProps {
     try {
       const res = await invokePOST({
         funcName: this.funcName,
-        args: btoa(this.args)
+        args: btoa(this.args),
+        enableNative: this.enableNative ? 'true' : 'false'
       })
       console.log(res)
       this.output = res as string
