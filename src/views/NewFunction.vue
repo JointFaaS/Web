@@ -118,13 +118,12 @@ export default class NewFunction extends Vue {
             codeZip: await zip.generateAsync({ type: 'base64' })
           })
           this.$message.info(String(res))
-        } catch (error) {
-          console.log()
+        } catch (err) {
+          message.info(err)
         } finally {
           this.spinning = false
         }
       } else {
-        console.log('error submit!!')
         return false
       }
     })
