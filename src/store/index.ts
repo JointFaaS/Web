@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import { functionGET, functionidDELETE } from '@/api'
+import { functionGET, functionidDELETE, backendGET } from '@/api'
 
 Vue.use(Vuex)
 
@@ -8,7 +8,8 @@ export default new Vuex.Store({
   state: {
     functionList: [],
     page: 1,
-    pageSize: 8
+    pageSize: 8,
+    backends: []
   },
   mutations: {
     updateFunctions (
@@ -24,6 +25,11 @@ export default new Vuex.Store({
     },
     deleteFunction (state, id) {
       state.functionList = state.functionList.filter((value: {functionName: string}) => value.functionName !== id)
+    },
+    updateBackends (
+      state,
+      newBackends) {
+      state.backends = newBackends
     }
   },
   actions: {
@@ -37,6 +43,10 @@ export default new Vuex.Store({
       })
       commit('deleteFunction', id)
       // TODO: exception
+    },
+    async getBackends ({ commit }) {
+      const res = await backendGET()
+      commit('updateBackends', res.backends)
     }
   },
   modules: {

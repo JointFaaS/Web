@@ -422,7 +422,7 @@ export const functionidGET = makeRequest<FunctionidGetRequest, FunctionidGetResp
  *
  * @分类 [function-controller↗](http://202.120.40.8:1086/project/13/interface/api/cat_16)
  * @请求头 `POST /invoke`
- * @更新时间 `2020-04-08 18:20:07`
+ * @更新时间 `2020-04-08 18:21:16`
  */
 /**
  * FunctionInvocationRequest :FunctionInvocationRequest
@@ -438,16 +438,16 @@ export interface InvokePostRequest {
  *
  * @分类 [function-controller↗](http://202.120.40.8:1086/project/13/interface/api/cat_16)
  * @请求头 `POST /invoke`
- * @更新时间 `2020-04-08 18:20:07`
+ * @更新时间 `2020-04-08 18:21:16`
  */
-export interface InvokePostResponse {}
+export type InvokePostResponse = any
 
 /**
  * 接口 [\/invoke↗](http://202.120.40.8:1086/project/13/interface/api/32) 的 **请求配置的类型**
  *
  * @分类 [function-controller↗](http://202.120.40.8:1086/project/13/interface/api/cat_16)
  * @请求头 `POST /invoke`
- * @更新时间 `2020-04-08 18:20:07`
+ * @更新时间 `2020-04-08 18:21:16`
  */
 type InvokePostRequestConfig = Readonly<
   RequestConfig<
@@ -466,7 +466,7 @@ type InvokePostRequestConfig = Readonly<
  *
  * @分类 [function-controller↗](http://202.120.40.8:1086/project/13/interface/api/cat_16)
  * @请求头 `POST /invoke`
- * @更新时间 `2020-04-08 18:20:07`
+ * @更新时间 `2020-04-08 18:21:16`
  */
 const invokePostRequestConfig: InvokePostRequestConfig = {
   mockUrl: mockUrl_0_0_0_1,
@@ -486,10 +486,191 @@ const invokePostRequestConfig: InvokePostRequestConfig = {
  *
  * @分类 [function-controller↗](http://202.120.40.8:1086/project/13/interface/api/cat_16)
  * @请求头 `POST /invoke`
- * @更新时间 `2020-04-08 18:20:07`
+ * @更新时间 `2020-04-08 18:21:16`
  */
 export const invokePOST = makeRequest<InvokePostRequest, InvokePostResponse, InvokePostRequestConfig>(
   invokePostRequestConfig,
+)
+
+const mockUrl_0_0_0_2 = 'http://202.120.40.8:1086/mock/13' as any
+const devUrl_0_0_0_2 = 'http://localhost:3000' as any
+const prodUrl_0_0_0_2 = 'http://202.120.40.8:30416' as any
+const dataKey_0_0_0_2 = '' as any
+
+/**
+ * 接口 [\/backend↗](http://202.120.40.8:1086/project/13/interface/api/270) 的 **请求类型**
+ *
+ * @分类 [state-controller↗](http://202.120.40.8:1086/project/13/interface/api/cat_19)
+ * @请求头 `GET /backend`
+ * @更新时间 `2020-05-31 11:47:54`
+ */
+export interface BackendGetRequest {}
+
+/**
+ * 接口 [\/backend↗](http://202.120.40.8:1086/project/13/interface/api/270) 的 **返回类型**
+ *
+ * @分类 [state-controller↗](http://202.120.40.8:1086/project/13/interface/api/cat_19)
+ * @请求头 `GET /backend`
+ * @更新时间 `2020-05-31 11:47:54`
+ */
+/**
+ * BackendGetResponse :BackendGetResponse
+ */
+export interface BackendGetResponse {
+  /**
+   * BackendOTD
+   */
+  backends?: {
+    addr?: string
+    latency?: {}
+    price?: {}
+    active?: boolean
+    priority?: {}
+  }[]
+}
+
+/**
+ * 接口 [\/backend↗](http://202.120.40.8:1086/project/13/interface/api/270) 的 **请求配置的类型**
+ *
+ * @分类 [state-controller↗](http://202.120.40.8:1086/project/13/interface/api/cat_19)
+ * @请求头 `GET /backend`
+ * @更新时间 `2020-05-31 11:47:54`
+ */
+type BackendGetRequestConfig = Readonly<
+  RequestConfig<
+    'http://202.120.40.8:1086/mock/13',
+    'http://localhost:3000',
+    'http://202.120.40.8:30416',
+    '/backend',
+    '',
+    string,
+    true
+  >
+>
+
+/**
+ * 接口 [\/backend↗](http://202.120.40.8:1086/project/13/interface/api/270) 的 **请求配置**
+ *
+ * @分类 [state-controller↗](http://202.120.40.8:1086/project/13/interface/api/cat_19)
+ * @请求头 `GET /backend`
+ * @更新时间 `2020-05-31 11:47:54`
+ */
+const backendGetRequestConfig: BackendGetRequestConfig = {
+  mockUrl: mockUrl_0_0_0_2,
+  devUrl: devUrl_0_0_0_2,
+  prodUrl: prodUrl_0_0_0_2,
+  path: '/backend',
+  method: Method.GET,
+  requestBodyType: RequestBodyType.query,
+  responseBodyType: ResponseBodyType.json,
+  dataKey: dataKey_0_0_0_2,
+  paramNames: [],
+  requestDataOptional: true,
+}
+
+/**
+ * 接口 [\/backend↗](http://202.120.40.8:1086/project/13/interface/api/270) 的 **请求函数**
+ *
+ * @分类 [state-controller↗](http://202.120.40.8:1086/project/13/interface/api/cat_19)
+ * @请求头 `GET /backend`
+ * @更新时间 `2020-05-31 11:47:54`
+ */
+export const backendGET = makeRequest<BackendGetRequest, BackendGetResponse, BackendGetRequestConfig>(
+  backendGetRequestConfig,
+)
+
+/**
+ * 接口 [\/backend↗](http://202.120.40.8:1086/project/13/interface/api/277) 的 **请求类型**
+ *
+ * @分类 [state-controller↗](http://202.120.40.8:1086/project/13/interface/api/cat_19)
+ * @请求头 `POST /backend`
+ * @更新时间 `2020-05-31 11:47:54`
+ */
+/**
+ * Backend :Backend
+ */
+export interface BackendPostRequest {
+  addr?: string
+  latency?: {}
+  price?: {}
+  active?: boolean
+  priority?: {}
+  /**
+   * WebClient
+   */
+  wc?: {}
+}
+
+/**
+ * 接口 [\/backend↗](http://202.120.40.8:1086/project/13/interface/api/277) 的 **返回类型**
+ *
+ * @分类 [state-controller↗](http://202.120.40.8:1086/project/13/interface/api/cat_19)
+ * @请求头 `POST /backend`
+ * @更新时间 `2020-05-31 11:47:54`
+ */
+/**
+ * BackendPostResponse :BackendPostResponse
+ */
+export interface BackendPostResponse {
+  /**
+   * OK
+   * InvalidAddr
+   * InvalidPrice
+   * InvalidPriority
+   * RuntimeError
+   *
+   */
+  status?: {}
+}
+
+/**
+ * 接口 [\/backend↗](http://202.120.40.8:1086/project/13/interface/api/277) 的 **请求配置的类型**
+ *
+ * @分类 [state-controller↗](http://202.120.40.8:1086/project/13/interface/api/cat_19)
+ * @请求头 `POST /backend`
+ * @更新时间 `2020-05-31 11:47:54`
+ */
+type BackendPostRequestConfig = Readonly<
+  RequestConfig<
+    'http://202.120.40.8:1086/mock/13',
+    'http://localhost:3000',
+    'http://202.120.40.8:30416',
+    '/backend',
+    '',
+    string,
+    false
+  >
+>
+
+/**
+ * 接口 [\/backend↗](http://202.120.40.8:1086/project/13/interface/api/277) 的 **请求配置**
+ *
+ * @分类 [state-controller↗](http://202.120.40.8:1086/project/13/interface/api/cat_19)
+ * @请求头 `POST /backend`
+ * @更新时间 `2020-05-31 11:47:54`
+ */
+const backendPostRequestConfig: BackendPostRequestConfig = {
+  mockUrl: mockUrl_0_0_0_2,
+  devUrl: devUrl_0_0_0_2,
+  prodUrl: prodUrl_0_0_0_2,
+  path: '/backend',
+  method: Method.POST,
+  requestBodyType: RequestBodyType.json,
+  responseBodyType: ResponseBodyType.json,
+  dataKey: dataKey_0_0_0_2,
+  paramNames: [],
+  requestDataOptional: false,
+}
+
+/**
+ * 接口 [\/backend↗](http://202.120.40.8:1086/project/13/interface/api/277) 的 **请求函数**
+ *
+ * @分类 [state-controller↗](http://202.120.40.8:1086/project/13/interface/api/cat_19)
+ * @请求头 `POST /backend`
+ * @更新时间 `2020-05-31 11:47:54`
+ */
+export const backendPOST = makeRequest<BackendPostRequest, BackendPostResponse, BackendPostRequestConfig>(
+  backendPostRequestConfig,
 )
 
 /* prettier-ignore-end */

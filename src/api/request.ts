@@ -16,7 +16,7 @@ export interface RequestOptions {
 export default function request<TResponseData> (
   payload: RequestFunctionParams,
   options: RequestOptions = {
-    server: 'dev'
+    server: 'mock'
   }
 ): Promise<TResponseData> {
   return new Promise<TResponseData>((resolve, reject) => {
