@@ -4757,9 +4757,9 @@ jsprim@^1.2.2:
     json-schema "0.2.3"
     verror "1.10.0"
 
-jszip@^3.3.0:
-  version "3.3.0"
-  resolved "https://registry.npm.taobao.org/jszip/download/jszip-3.3.0.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fjszip%2Fdownload%2Fjszip-3.3.0.tgz#29d72c21a54990fa885b11fc843db320640d5271"
+jszip@^3.7.0:
+  version "3.7.0"
+  resolved "https://registry.yarnpkg.com/jszip/-/jszip-3.7.0.tgz#9b8b995a4e7c9024653ce743e902076a82fdf4e6"
   dependencies:
     lie "~3.3.0"
     pako "~1.0.2"
